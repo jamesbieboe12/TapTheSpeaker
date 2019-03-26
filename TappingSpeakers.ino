@@ -1,7 +1,5 @@
 byte tapCount = 0;
-int led = 11;
  int power;
- int flip;
 void setup()
 {
 Serial.begin(9600);
@@ -18,7 +16,6 @@ if(sensorValue > 40) //detect a tap
     delay(70);
     tapCount = tapCount + 1; //increment tap count
     int power = tapCount * 20;
-    flip = flip + 1;
     if(tapCount > 4){
  
   analogWrite(led, power); 
